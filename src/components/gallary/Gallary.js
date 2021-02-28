@@ -7,7 +7,7 @@ import gallary4 from "./images/gallary4.jpeg";
 import gallary5 from "./images/gallary5.jpeg";
 
 
-const Gallary = () => {
+export const Gallary = () => {
     return (  
       <div className="container">
         <div className="product-row ">
@@ -59,4 +59,9 @@ const Gallary = () => {
       </div>
     );
 }
-export default Gallary
+
+
+
+
+  
+

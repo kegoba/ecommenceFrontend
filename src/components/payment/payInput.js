@@ -1,5 +1,5 @@
 import React ,{Component} from "react"
-import { Link, useLocation} from "react-router-dom";
+//import { Link, useLocation} from "react-router-dom";
 //import {usePaystackPayment} from "react-paystack";
 import {connect} from "react-redux"
 import { Make_payment } from "../reducer/Action" // ../reducer/Action";
@@ -8,7 +8,7 @@ import {KEY} from "../asset/asset"
 
 
 const MapStateToProps = (state)=>({
-    email : state.email
+    email : state.user.email
 })
 
 const MapDispatchToProps = (dispatch)=>({

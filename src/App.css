@@ -117,12 +117,14 @@ margin-top: 200px;
 @media (max-width:700px){
   .image{
     width: 80px;
+     transition: .3s;
   }
 }
 
 .image{
   width: 50px;
   height: 100px;
+   transition: 3s;
 }
 .prevent{
   width: 300px;
@@ -131,7 +133,7 @@ margin-top: 200px;
 }
 
 .price{
-  height: 200px;
+  height: 80px;
 }
 
 .card-footer{
@@ -144,7 +146,8 @@ margin-top: 200px;
   
 }
 .card-body-m{
-  height: 80px;
+  height: 120px;
+  width: 120px;
 }
 .card-body{
   width: 130px;
@@ -156,6 +159,12 @@ margin-top: 200px;
 
 } 
 .addTocart{
+  border-radius: 50px;
+  width: 40px;
+  align-self: center;
+
+}
+.removeFromCart{
   border-radius: 50px;
   width: 40px;
   align-self: center;
@@ -193,28 +202,40 @@ margin-top: 200px;
 
 }
 }
+.featured_product{
+  width: 1200px;
+  height: 400;
+}
+.image-featured-product{
+  width:150px;
+  height: 100px;
+   transition: 3s;
+}
+
 
 .product-row{
   display: flex;
   flex-wrap: wrap;
+  
 }
 
 .product-col{
   width: 100px;
-  margin-right: 20px;
-   margin-left: 20px;
+  margin-right: 30px;
+   margin-left: 30px;
 
 }
 .product-cart{
   margin-right: 20px;
   height: 250px;
-  margin-bottom: 50px;
-   margin-right: 50px;
-    width: 160px;
+  margin-bottom: 80px;
+   margin-right: 8F0px;
+    width: 200px;
+    padding: 25px;
 }
 
 
-.fa{
+.fa-footer{
   padding: 20px;
 }
 
@@ -247,4 +268,35 @@ margin-top: 200px;
   color: #87ceeb;
   border-radius: 10px;
 font-size: small;
+}
+
+
+
+.ca{
+ font-size: xx-large
+}
+
+
+
+.payment_logo{
+  height: 70px;
+  width: 100px
+
+}
+
+
+@media (min-width:700px){
+.mobile_view{
+display: none
+
+}
+
+}
+
+@media (max-width:700px){
+.desktop_view{
+display: none
+
+}
+
 }

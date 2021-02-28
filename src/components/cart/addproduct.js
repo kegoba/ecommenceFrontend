@@ -38,7 +38,7 @@ class Addproduct extends Component{
     }
     onchangePrice = (e) => {
         this.setState({
-            price: e.target.value.toUpperCase()
+            price: e.target.value
         })
     }
     onchangeDescription = (e) => {

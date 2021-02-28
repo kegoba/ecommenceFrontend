@@ -11,14 +11,53 @@ import Men from "../Category/men"
 import Women from "../Category/women"
 import SuccessPage from "../payment/success"
 import { connect}  from "react-redux"
+import { Logout_action} from "../reducer/Action"
 
 const MapStateToProps = (state)=>({
-  cart : state.cart
+  cart : state.cart,
+  user_id : state.user.user_id,
 })
 
-const MapDispatchToProps = (dispatch)=>({
-
+const MapDispatchToProps = (dispatch) => ({
+  Logout_action: (user) => {
+    dispatch(Logout_action(user));
+  }
 })
+
+class Login_out extends Component{
+  constructor() {
+    super()
+    this.state = {
+      user: [],
+      isLogin: false,
+    }
+  }
+  componentDidMount(){
+    console.log(()=>{
+      setTimeout(()=> {
+        this.props.Logout_action(this.state.user)
+        
+      },10000 );
+    })
+    //this.props.Logout_action(this.state.user)
+    this.props.history.push("/login")
+
+
+
+  }
+
+render(){
+  return(
+    <div>
+      <p> Logout </p>
+    </div>
+  )
+}
+
+}
+
+
+
 
 
 class Menu extends Component {
@@ -30,10 +69,15 @@ class Menu extends Component {
         }
     }
     
+
+
+
+
+
     render() {
         //const user  = this.state.user.first_name
-        const number_of_item_in_cart = this.props.cart.length;
-      console.log(number_of_item_in_cart,  "menu page")
+        let number_of_item_in_cart = this.props.cart.length;
+        let user_id = this.props.user_id
         return (
           <Router className="container text-center">
             <div className="menu">
@@ -63,6 +107,18 @@ class Menu extends Component {
                       <Link to={"/pay"} className="nav-link">
                         Fund Your Wallet
                       </Link>
+                      
+                    </li>
+                    <li className="nav-item text-left">
+                      {!user_id ?
+                      <Link to={"/login"} className="nav-link">
+                        Login
+                      </Link>
+                      :
+                        <Link to={"logout"} className="nav-link">
+                        Logout
+                      </Link>
+                      }
                     </li>
                     <li className="nav-item cart-menu">
                       <Link to={"/cart"} className="nav-link fa fa-cart-plus">
@@ -92,6 +148,7 @@ class Menu extends Component {
               <Route path="/men" component={Men} />
               <Route path="/women" component={Women} />
               <Route path="/login" component={Login} />
+              <Route path="/logout" component={Login_out} />
               <Route path="/reg" component={Reg} />
               <Route path="/success" component={SuccessPage} />
             </Switch>

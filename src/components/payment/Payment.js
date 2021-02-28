@@ -1,11 +1,11 @@
-import React, { Component } from "react"
-import { Balance} from "../reducer/Action"
+import React from "react"
+//import { Balance} from "../reducer/Action"
 import { BALANCE } from "../reducer/cart-actions"
 import {connect, useSelector} from "react-redux"
-import {URL, KEY} from "../asset/asset"
-import axios from "axios"
+//import {URL, KEY} from "../asset/asset"
+//import axios from "axios"
  import {usePaystackPayment} from "react-paystack";
-import { Alert } from "reactstrap";
+//import { Alert } from "reactstrap";
 
 
 const MapstateToProps =(state) =>{
