@@ -26,7 +26,8 @@ const MapDispatchToProps =(dispatch) =>{
 const onSuccess = (reference) => {
   
   console.log(reference);
-  this.props.history.push("/success")
+  window.open(reference.redirecturl);
+
 };
 
 // you can call this function anything
