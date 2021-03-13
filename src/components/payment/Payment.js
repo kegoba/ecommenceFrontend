@@ -23,6 +23,17 @@ const MapDispatchToProps =(dispatch) =>{
 
 
 }
+const onSuccess = (reference) => {
+  
+  console.log(reference);
+  this.props.history.push("/success")
+};
+
+// you can call this function anything
+const onClose = () => {
+  // implementation for  whatever you want to do when the Paystac
+  console.log('closed')
+}
 
 const PaymentButton = () => {
  const paymentDetail = useSelector((state) => state.paymentDetail);
@@ -32,7 +43,7 @@ const PaymentButton = () => {
       <button 
       className="btn btn-info"
         onClick={() => {
-          initializePayment();
+          initializePayment(onSuccess, onClose);
         }}
       >
         Proceed{">>"}
