@@ -1,5 +1,5 @@
 import {URL} from "../asset/asset"
-import { ADD_TO_CART, REMOVE_ITEM ,BALANCE ,ADD_QTY, SUB_QTY, LOGIN, PAY, LOGOUT}  from "./cart-actions"
+import { ADD_TO_CART, REMOVE_ITEM, BALANCE, ADD_QTY, SUCCESS, SUB_QTY, LOGIN, PAY, LOGOUT}  from "./cart-actions"
 import axios from "axios"
 
  const initial_state = {
@@ -136,6 +136,15 @@ export const AppReducer = (state=initial_state, action)=>{
              ...state,
              paymentDetail: paymentDetail,
            };
+       }
+
+       if (action.type === SUCCESS){
+           let transaction_info = action.transaction_info
+
+           return {
+               ...state,
+               transaction_info : transaction_info
+           }
        }
        else {
         return state;

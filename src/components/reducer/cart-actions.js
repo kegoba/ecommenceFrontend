@@ -7,3 +7,4 @@ export const ADD_QTY      =  "ADD_QTY";
 export const LOGIN        = "LOGIN";
 export const PAY          = "PAY";
 export const LOGOUT       =  "LOGOUT"  
+export const SUCCESS      =  "SUCCESS"

@@ -1,38 +1,21 @@
 import React from "react"
 //import { Balance} from "../reducer/Action"
 import { BALANCE } from "../reducer/cart-actions"
-import {connect, useSelector} from "react-redux"
-//import {URL, KEY} from "../asset/asset"
-//import axios from "axios"
+import { connect, useSelector, useDispatch} from "react-redux"
  import {usePaystackPayment} from "react-paystack";
-//import { Alert } from "reactstrap";
+import {Transaction_details } from "../reducer/Action"
 
 
-const MapstateToProps =(state) =>{
-    console.log("mapstatetoprops",state.paymentDetail)
-    return {
-      paymentDetail : state.paymentDetail
-    }
-
-}
-
-const MapDispatchToProps =(dispatch) =>{
-    return{
-        Balance : (email)=>{dispatch(BALANCE)}
-    }
-
-
-}
 const onSuccess = (reference) => {
-  
   console.log(reference);
-  window.open(reference.redirecturl);
+  
+  window.location = "/success"
+ 
 
 };
 
-// you can call this function anything
+
 const onClose = () => {
-  // implementation for  whatever you want to do when the Paystac
   console.log('closed')
 }
 
@@ -71,4 +54,4 @@ function Payment() {
   );
 }
 
-export default  connect(MapstateToProps, MapDispatchToProps) (Payment)
+export default Payment
