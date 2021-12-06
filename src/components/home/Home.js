@@ -29,17 +29,17 @@ const MapDispatchToProps= (dispatch)=>({
 })
 
 class Home extends Component {
-  constructor() {
-    super();
-    this.handleToCart = this.handleToCart.bind(this);
-    this.state = {
+  //constructor() {
+    //super();
+    state = {
       items: [],
       men: [],
       women: [],
       message: "",
       show: false,
+      feature_product  : []
     };
-  }
+ // }
 
   componentDidMount() {
     GetProduct();
@@ -54,6 +54,7 @@ class Home extends Component {
       this.setState({
         items: data,
         men: men_wear,
+        feature_product :data,
         women: women_wear,
       });
     });
@@ -79,8 +80,9 @@ class Home extends Component {
   render() {
     let women = this.state.women;
     let men = this.state.men;
-    const men_category = () =>
-      men.map((item , key)=> (
+    let feature_product = this.state.feature_product
+    const feature_products  = () =>
+      feature_product.map((item , key)=> (
         <div
           key={key}
           className="product-col "
@@ -117,14 +119,14 @@ class Home extends Component {
           </p>
           <div className="container mobile_view">
             <Slider
-            className="featured_product"
+            className="featured_product-mobile-view"
               dots={false}
               slidesToShow={2}
               slidesToScroll={1}
               autoplay={true}
               autoplaySpeed={3000}
             >
-              {men_category()}
+              {feature_products()}
             </Slider>
           </div>
           <div className="container desktop_view">
@@ -136,7 +138,7 @@ class Home extends Component {
               autoplay={true}
               autoplaySpeed={3000}
             >
-              {men_category()}
+              {feature_products()}
             </Slider>
           </div>
           <p className="women text-right btn-info">
