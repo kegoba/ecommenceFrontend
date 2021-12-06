@@ -1,9 +1,8 @@
 import React from "react"
 //import { Balance} from "../reducer/Action"
-import { BALANCE } from "../reducer/cart-actions"
-import { connect, useSelector, useDispatch} from "react-redux"
+import { useSelector} from "react-redux"
  import {usePaystackPayment} from "react-paystack";
-import {Transaction_details } from "../reducer/Action"
+
 
 
 const onSuccess = (reference) => {

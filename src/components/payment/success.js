@@ -1,10 +1,9 @@
 import React from "react"
-import { connect, useSelector, useDispatch} from "react-redux"
 
 
 
 const SuccessPage = ()=>{
-    const paymentDetail = useSelector((state) => state.paymentDetail);
+
 
     return(
         <div className="constainer ">
